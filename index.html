@@ -7,6 +7,25 @@
 <title>RKAYSOURCEDITT™</title>
 
 <style>
+@media (max-width:768px){
+
+.logo{
+font-size:22px;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+button{
+width:100%;
+}
+
+}
 *{
 margin:0;
 padding:0;
@@ -93,6 +112,33 @@ text-align:center;
 margin-top:50px;
 }
 </style>
+.menu-btn{
+display:none;
+font-size:30px;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.menu-btn{
+display:block;
+color:white;
+}
+
+nav{
+display:none;
+flex-direction:column;
+position:absolute;
+right:10px;
+top:60px;
+background:#111;
+padding:15px;
+}
+
+nav.show{
+display:flex;
+}
+}
 </head>
 
 <body>
@@ -100,11 +146,14 @@ margin-top:50px;
 <header>
 <div class="logo">RKAYSOURCEDITT™</div>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">Shop</a>
-<a href="#">Reviews</a>
-<a href="#">Contact</a>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<nav id="menu">
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
+<a href="login.html">Login</a>
 </nav>
 </header>
 
@@ -136,4 +185,9 @@ margin-top:50px;
 </footer>
 
 </body>
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("show");
+}
+</script>
 </html>
