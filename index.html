@@ -1,36 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>RKAYSOURCEDITT™</title>
 
 <style>
-@media (max-width:768px){
 
-.logo{
-font-size:22px;
-}
-
-.hero h1{
-font-size:40px;
-}
-
-.hero p{
-font-size:18px;
-}
-
-button{
-width:100%;
-}
-
-}
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:Arial, sans-serif;
 }
 
 body{
@@ -42,42 +25,66 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px;
+padding:15px 20px;
 background:#0a0a0a;
 border-bottom:1px solid #222;
 position:sticky;
 top:0;
+z-index:1000;
 }
 
 .logo{
-font-size:32px;
+font-size:28px;
 font-weight:bold;
 color:red;
+}
+
+nav{
+display:flex;
+gap:15px;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin:0 10px;
+font-size:14px;
+}
+
+.menu-btn{
+display:none;
+font-size:30px;
+cursor:pointer;
+color:white;
+}
+
+.search-bar{
+padding:20px;
+background:#111;
+}
+
+.search-bar input{
+width:100%;
+padding:12px;
+border:none;
+background:#222;
+color:white;
+border-radius:5px;
 }
 
 .hero{
-height:80vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-padding:50px;
-background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7));
+padding:80px 20px;
+text-align:center;
 }
 
 .hero h1{
-font-size:70px;
+font-size:60px;
 color:red;
+margin-bottom:15px;
 }
 
 .hero p{
 font-size:20px;
-margin:20px 0;
+margin-bottom:25px;
 }
 
 .btn{
@@ -86,76 +93,161 @@ color:white;
 padding:15px 30px;
 text-decoration:none;
 display:inline-block;
+border-radius:5px;
 }
 
 .categories{
-padding:50px;
+padding:50px 20px;
+}
+
+.categories h2{
+text-align:center;
+margin-bottom:25px;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:20px;
 }
 
 .card{
 background:#111;
+padding:25px;
+border:1px solid #222;
+text-align:center;
+border-radius:8px;
+}
+
+.featured{
+padding:50px 20px;
+}
+
+.featured h2{
+text-align:center;
+margin-bottom:25px;
+}
+
+.product{
+background:#111;
 padding:20px;
 border:1px solid #222;
 text-align:center;
+border-radius:8px;
+}
+
+.product img{
+width:100%;
+height:180px;
+background:#222;
+border-radius:5px;
+}
+
+.price{
+color:red;
+font-size:20px;
+margin:10px 0;
+}
+
+.product button{
+background:red;
+color:white;
+border:none;
+padding:12px;
+width:100%;
+cursor:pointer;
+border-radius:5px;
+}
+
+.reviews{
+padding:50px 20px;
+}
+
+.reviews h2{
+text-align:center;
+margin-bottom:25px;
+}
+
+.review{
+background:#111;
+padding:20px;
+margin-bottom:15px;
+border-radius:8px;
 }
 
 footer{
-padding:40px;
+padding:40px 20px;
 background:#0a0a0a;
 text-align:center;
-margin-top:50px;
-}
-</style>
-.menu-btn{
-display:none;
-font-size:30px;
-cursor:pointer;
+margin-top:40px;
+border-top:1px solid #222;
 }
 
 @media(max-width:768px){
 
+.logo{
+font-size:22px;
+}
+
 .menu-btn{
 display:block;
-color:white;
 }
 
 nav{
 display:none;
-flex-direction:column;
 position:absolute;
 right:10px;
 top:60px;
 background:#111;
 padding:15px;
+flex-direction:column;
+width:200px;
+border:1px solid #222;
 }
 
 nav.show{
 display:flex;
 }
+
+.hero h1{
+font-size:38px;
 }
+
+.hero p{
+font-size:16px;
+}
+
+.btn{
+width:100%;
+}
+
+}
+
+</style>
+
 </head>
 
 <body>
 
 <header>
+
 <div class="logo">RKAYSOURCEDITT™</div>
 
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
 <nav id="menu">
-<a href="index.html">Home</a>
-<a href="shop.html">Shop</a>
-<a href="reviews.html">Reviews</a>
-<a href="contact.html">Contact</a>
-<a href="login.html">Login</a>
+<a href="#">Home</a>
+<a href="#">Shop</a>
+<a href="#">Reviews</a>
+<a href="#">Contact</a>
+<a href="#">Login</a>
 </nav>
+
 </header>
+
+<section class="search-bar">
+<input type="text" placeholder="Search products...">
+</section>
 
 <section class="hero">
 <h1>RKAYSOURCEDITT™</h1>
@@ -164,6 +256,7 @@ display:flex;
 </section>
 
 <section class="categories">
+
 <h2>Shop Categories</h2>
 
 <div class="grid">
@@ -175,19 +268,94 @@ display:flex;
 <div class="card">Hats</div>
 <div class="card">Electronics</div>
 <div class="card">Jewellery</div>
+<div class="card">Concert Tickets</div>
 
 </div>
+
+</section>
+
+<section class="featured">
+
+<h2>Featured Products</h2>
+
+<div class="grid">
+
+<div class="product">
+<img alt="">
+<h3>Nike Tech</h3>
+<p class="price">£120</p>
+<button>Add To Basket</button>
+</div>
+
+<div class="product">
+<img alt="">
+<h3>Jordan 4</h3>
+<p class="price">£160</p>
+<button>Add To Basket</button>
+</div>
+
+<div class="product">
+<img alt="">
+<h3>Moncler Jacket</h3>
+<p class="price">£320</p>
+<button>Add To Basket</button>
+</div>
+
+<div class="product">
+<img alt="">
+<h3>LV Backpack</h3>
+<p class="price">£280</p>
+<button>Add To Basket</button>
+</div>
+
+</div>
+
+</section>
+
+<section class="reviews">
+
+<h2>Customer Reviews</h2>
+
+<div class="review">
+★★★★★<br><br>
+Fast delivery and great communication.
+</div>
+
+<div class="review">
+★★★★★<br><br>
+Good quality and quick service.
+</div>
+
+<div class="review">
+★★★★★<br><br>
+Would order again.
+</div>
+
 </section>
 
 <footer>
+
 <h3>RKAYSOURCEDITT™</h3>
-<p>@rkaysourceditt</p>
+
+<br>
+
+<p>Instagram: @rkaysourceditt</p>
+<p>Snapchat: @rkaysourceditt</p>
+<p>TikTok: @rkaysourceditt</p>
+
+<br>
+
+<p>
+For faster replies and all enquiries, message me on my social media accounts.
+</p>
+
 </footer>
 
-</body>
 <script>
 function toggleMenu(){
 document.getElementById("menu").classList.toggle("show");
 }
 </script>
+
+</body>
 </html>
